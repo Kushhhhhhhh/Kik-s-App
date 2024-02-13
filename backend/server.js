@@ -12,18 +12,6 @@ app.get('/', (req, res) => {
     res.send("Hello Kush");
 });
 
-// app.get('/api/auth/signup', (req, res) => {
-//     console.log('Signup route');
-// });
-
-// app.get('/api/auth/login', (req, res) => {
-//     console.log('Login route');
-// });
-
-// app.get('/api/auth/logout', (req, res) => {
-//     console.log('Logout route');
-// });
-
 app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
