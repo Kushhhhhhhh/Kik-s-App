@@ -9,16 +9,14 @@ const io = new Server(server, {
     cors: {
         origin: "http://localhost:3000",
         methods: ["GET", "POST"]
-    }
-})
+    },
+});
 
 export const getRecieverSocketId = (receiverId) => {
     return userSocketMap[receiverId];
-}
+};
 
-const userSocketMap = {
-    
-}
+const userSocketMap = {};
 
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
@@ -37,4 +35,4 @@ io.on("connection", (socket) => {
     })
 })
 
-export { app, io, server }
+export { app, io, server };

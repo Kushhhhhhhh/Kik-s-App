@@ -61,11 +61,11 @@ export const getMessages = async (req, res) => {
            }, 
        }).populate('messages'); 
 
-       if(!conversation) return res.status(404).json([]);
+       if(!conversation) return res.status(200).json([]);
        
        const messages = conversation.messages;
        
-       res.status(200).json(conversation.messages);
+       res.status(200).json(messages);
         
     } catch (error) {
 
