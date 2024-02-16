@@ -32,7 +32,4 @@ Key Features:
     Search functionality
     Chatbots
     Theme customization
-
-# Disclaimer:
-
-This is a general template, and specific details (codebase structure, environment variables, configuration, and deployment steps) might vary depending on your actual implementation. Adapt the instructions and feature list as needed for your KiK's chat app.
+    More!

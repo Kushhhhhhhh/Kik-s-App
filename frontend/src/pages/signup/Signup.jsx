@@ -3,7 +3,7 @@ import GenderCheckbox from "./GenderCheckbox";
 import { useState } from "react";
 import useSignup from "../../hooks/useSignup";
 
-const SignUp = () => {
+function SignUp() {
 
     const [input, setInput] = useState({
         fullName: '',
@@ -11,18 +11,18 @@ const SignUp = () => {
         password: '',
         confirmPassword: '',
         gender: '',
-    })
+    });
 
     const { loading, signup } = useSignup();
 
     const handleCheckbox = (gender) => {
-        setInput({ ...input, gender })
-    }
+        setInput({ ...input, gender });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await signup(input)
-    }
+        await signup(input);
+    };
 
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
@@ -53,8 +53,7 @@ const SignUp = () => {
                         <input
                             type='password'
                             placeholder='Enter Password'
-                            className='w-full input input-bordered h-10' value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })}
-                        />
+                            className='w-full input input-bordered h-10' value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} />
                     </div>
 
                     <div>
@@ -66,8 +65,7 @@ const SignUp = () => {
                             placeholder='Confirm Password'
                             className='w-full input input-bordered h-10'
                             value={input.confirmPassword}
-                            onChange={(e) => setInput({ ...input, confirmPassword: e.target.value })}
-                        />
+                            onChange={(e) => setInput({ ...input, confirmPassword: e.target.value })} />
                     </div>
 
                     <GenderCheckbox onCheckboxChange={handleCheckbox} selectGender={input.gender} />
@@ -77,14 +75,12 @@ const SignUp = () => {
                     </Link>
 
                     <div>
-                        <button className='btn btn-block btn-sm mt-2 border border-slate-700' disabled={loading}>{
-                            loading ? <span className="loading loading-spinner"></span> : 'Sign Up'
-                        }</button>
+                        <button className='btn btn-block btn-sm mt-2 border border-slate-700' disabled={loading}>{loading ? <span className="loading loading-spinner"></span> : 'Sign Up'}</button>
                     </div>
                 </form>
             </div>
         </div>
     );
-};
+}
 
 export default SignUp;
